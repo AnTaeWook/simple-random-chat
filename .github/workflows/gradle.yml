@@ -36,13 +36,6 @@ jobs:
 
     - name: gradlew permission
       run: chmod +x gradlew
-
-    - name: database setup
-      uses: mirromutth/mysql-action@v1.1
-      with:
-        mysql version: '8.0.31'
-        mysql database: 'chatting'
-        mysql root password: ${{ secrets.DATABASE_ROOT_PASSWORD }}
       
     - name: Build with Gradle
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
